@@ -1,0 +1,36 @@
+#TASK 1:  WRITE A PYTHON CODE FOR BLINKING THE LED FOR RASBERRY PI
+#CODE:
+import RPi.GPIO as GPIO
+from time import sleep
+GPIO.setwarnings (False)
+GPIO.setmode (GPIO.BOARD)
+GPIO.setup (8, GPIO.OUT, initial = GPIO.LOW)
+while True:
+  GPIO.output (8, GPIO.HIGH)
+  sleep (1)
+  GPIO.output (8, GPIO.LOW)
+  sleep (1)
+
+
+#TASK 2:  WRITE A PYTHON CODE FOR TRAFFIC LIGHTS FOR RASBERRY PI
+#CODE:
+import RPi.GPIO as GPIO
+from gpiozero import LED
+from time import sleep
+
+red = LED(22)
+amber = LED(27)
+green = LED(17)
+
+while True:
+    red.on()
+    sleep(1)
+    amber.on()
+    sleep(1)
+    green.on()
+    sleep(1)
+    red.off()
+    sleep(1)
+    amber.off()
+    sleep(1)
+    green.off()
